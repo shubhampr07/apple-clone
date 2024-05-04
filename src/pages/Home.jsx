@@ -10,19 +10,9 @@ import '@aws-amplify/ui-react/styles.css';
 
 
 
-Amplify.configure({
-  Auth: {
-    region: process.env.REACT_APP_REGION,
-    userPoolId: process.env.REACT_APP_USER_POOL_ID,
-    userPoolWebClientId: process.env.REACT_APP_CLIENT_ID,
-  }
-});
-
 
 const Home = () => {
   return (
-    <Authenticator>
-      {({signOut, user}) => (
         <>
         <Header />
         <Info />
@@ -31,10 +21,7 @@ const Home = () => {
         <Section data={productsSection.macbookpro} />
         <Products />
         </>
-      )}
-      
-    </Authenticator>
-  )
+       )
 }
 
 export default Home
